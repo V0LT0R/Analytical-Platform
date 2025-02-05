@@ -1,8 +1,10 @@
 // insertTestData.js
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+dotenv.config();
 
 // Подключение к MongoDB
-mongoose.connect('mongodb+srv://bya20102005:1234@analyticalplatform.zfbow.mongodb.net/?retryWrites=true&w=majority&appName=analyticalPlatform')
+mongoose.connect(process.env.MONGODB_URI)
     .then(async () => {
         console.log('Connected to MongoDB');
 
